@@ -1,7 +1,7 @@
 package DDSpark
 
-import DDSpark.Utils.{readTSV, schemaTransactions, stringDate}
-import org.apache.spark.sql.{Row, SparkSession}
+import DDSpark.Utils.readTSV
+import org.apache.spark.sql.SparkSession
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach, FunSuite}
 
 class UtilsTesting
@@ -31,19 +31,19 @@ class UtilsTesting
     assert(input.count() === 7)
   }
 
-  test("Test to convert strings to long format. Output is in ascending order.") {
-    val df1 = spark.createDataFrame(
-      spark.sparkContext.parallelize(
-        Seq(
-          Row("user1", "2017-06-19T19:01:01Z", "a1", "aName1", "t1", "tName1"),
-          Row("user4", "2017-06-19T19:02:01Z", "a1", "aName1", "t1", "tName1")
-        )
-      ),
-      schemaTransactions
-    )
-    val output2 = stringDate(df1, "TestDate", "timestamp")
-    assert(output2.first().getLong(6) === 1497895261)
-    assert(output2.first().getString(0) === "user1")
-  }
+  //  test("Test to convert strings to long format. Output is in ascending order.") {
+  //    val df1 = spark.createDataFrame(
+  //      spark.sparkContext.parallelize(
+  //        Seq(
+  //          Row("user1", "2017-06-19T19:01:01Z", "a1", "aName1", "t1", "tName1"),
+  //          Row("user4", "2017-06-19T19:02:01Z", "a1", "aName1", "t1", "tName1")
+  //        )
+  //      ),
+  //      schemaTransactions
+  //    )
+  //    val output2 = stringDate(df1, "TestDate", "timestamp")
+  //    assert(output2.first().getLong(6) === 1497895261)
+  //    assert(output2.first().getString(0) === "user1")
+  //  }
 
 }
