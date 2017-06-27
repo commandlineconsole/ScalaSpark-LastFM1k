@@ -3,6 +3,8 @@
 |-------------------|-----------|------------|---------|
 | DE Technical Test | 16/6/2017 | 19/6/2017  | 0.2     |
 
+[![Build Status](https://travis-ci.org/dandxy89/ScalaSpark-LastFM1k.svg?branch=master)](https://travis-ci.org/dandxy89/ScalaSpark-LastFM1k)
+
 **UPDATE THE APP CONFIG BEFORE RUNNING / BUILDING THE THE FAT JAR**
 
 # Tasks
