@@ -1,0 +1,23 @@
+### Scala template
+*.class
+*.log
+
+### SBT template
+# Simple Build Tool
+# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
+
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+.cache
+.lib/
+
+.DS_Store
+.idea/
+project/project/
+project/target/
+src/.DS_Store
+src/main/.DS_Store
+src/main/scala/.DS_Store
